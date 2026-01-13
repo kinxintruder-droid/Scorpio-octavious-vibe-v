@@ -1,0 +1,2 @@
+following/{uid}  -> { follows: [otherUid1, otherUid2...] }
+followers/{uid} -> { followers: [otherUid1, otherUid2...] }
