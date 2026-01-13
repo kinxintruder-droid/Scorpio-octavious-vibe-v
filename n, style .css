@@ -1,0 +1,123 @@
+:root {
+  --bg: #0b0f1a;
+  --card: #121826;
+  --blue: #2563eb;
+  --text: #ffffff;
+  --muted: #9ca3af;
+}
+
+body.home {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.logo {
+  color: var(--blue);
+  margin: 0;
+}
+
+.top-icons {
+  font-size: 20px;
+}
+
+/* NAV BAR */
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  margin: 10px;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+/* CREATE POST */
+.create-post {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-post input {
+  flex: 1;
+  background: #020617;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+}
+
+.media-btn {
+  color: var(--blue);
+}
+
+/* STORIES */
+.stories {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.story {
+  width: 90px;
+  height: 140px;
+  background: #020617;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.add-story {
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: var(--blue);
+}
+
+/* POST */
+.post-header {
+  display: flex;
+  gap: 10px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+.post-text {
+  margin: 10px 0;
+}
+
+.tag {
+  color: var(--blue);
+}
+
+.post-media img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post-actions {
+  color: var(--muted);
+  margin-top: 8px;
+}
