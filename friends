@@ -1,0 +1,2 @@
+friends/{uid} -> { friends: [otherUid1, otherUid2...] }
+friendRequests/{uid} -> { requests: [otherUid1, otherUid2...] }
