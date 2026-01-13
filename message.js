@@ -1,3 +1,4 @@
-function send() {
-  alert("Message stored in Firestore (next step)");
+if (!receiver.messagesEnabled) {
+  alert("User has disabled messages");
+  return;
 }
