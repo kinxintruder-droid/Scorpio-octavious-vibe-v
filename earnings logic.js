@@ -1,0 +1,1 @@
+if (post.boosted) return; // no earnings
