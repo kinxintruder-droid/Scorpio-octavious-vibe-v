@@ -1,0 +1,18 @@
+<h2>Wallet</h2>
+<p>Balance: R<span id="bal">0</span></p>
+
+<!-- Withdraw Section -->
+<input id="amount" placeholder="Withdraw amount">
+<select id="method">
+  <option>PayFast</option>
+  <option>PayPal</option>
+</select>
+<button onclick="withdraw()">Withdraw</button>
+
+<!-- Invite Friends Section -->
+<div style="margin-top:20px;">
+  <h3>Invite a Friend</h3>
+  <p>Share this link and earn rewards:</p>
+  <input type="text" id="inviteLink" value="https://scorpio-octavious-vibe.firebase.com" readonly style="width:80%;">
+  <button onclick="copyInvite()">Copy Link</button>
+</div>
