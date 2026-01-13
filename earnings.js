@@ -1,0 +1,1 @@
+module.exports = { like: 0.05, view: 0.01 };
