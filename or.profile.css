@@ -1,0 +1,117 @@
+:root{
+  --bg:#0b0f1a;
+  --card:#121826;
+  --blue:#2563eb;
+  --text:#ffffff;
+  --muted:#9ca3af;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, sans-serif;
+}
+
+/* TOP */
+.top{
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+}
+
+/* COVER */
+.cover{
+  height:120px;
+  background:linear-gradient(135deg,#020617,#2563eb);
+}
+
+/* PROFILE BOX */
+.profile-box{
+  background:var(--bg);
+  padding:12px;
+}
+
+.profile-pic{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid var(--blue);
+  margin-top:-45px;
+}
+
+.stats{
+  color:var(--muted);
+}
+
+.verified{
+  color:var(--blue);
+  font-size:12px;
+}
+
+/* STORIES */
+.stories{
+  display:flex;
+  gap:8px;
+  margin:10px 0;
+}
+
+.story{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#020617;
+  border:2px solid var(--blue);
+}
+
+/* BIO */
+.bio{
+  margin:10px 0;
+}
+
+/* BUTTONS */
+button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  margin-top:8px;
+  font-size:15px;
+}
+
+.primary{
+  background:var(--blue);
+  color:white;
+}
+
+.secondary{
+  background:#1f2937;
+  color:white;
+}
+
+/* TABS */
+.tabs{
+  display:flex;
+  gap:20px;
+  padding:10px;
+  border-bottom:1px solid #1f2937;
+}
+
+.tabs span{
+  color:var(--muted);
+}
+
+.tabs .active{
+  color:var(--blue);
+  font-weight:bold;
+}
+
+/* DETAILS */
+.details{
+  padding:12px;
+}
+
+.link{
+  color:var(--blue);
+}
