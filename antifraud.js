@@ -1,0 +1,1 @@
+module.exports = (owner, user) => owner !== user;
