@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--text);
+}
+
+.card {
+  background: var(--black-soft);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+button {
+  background: linear-gradient(135deg, var(--blue), var(--blue-glow));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: bold;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  background: #020617;
+  color: white;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+a {
+  color: var(--blue-glow);
+  text-decoration: none;
+}
