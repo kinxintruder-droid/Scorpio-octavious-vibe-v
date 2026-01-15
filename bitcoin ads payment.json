@@ -1,0 +1,7 @@
+{
+  "uid": "abc123",
+  "amount": 100,
+  "currency": "BTC",
+  "status": "PAID",
+  "type": "ads"
+}
