@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Auth Test</title>
+</head>
+<body>
+
+<h2>Scorpio Octavious Vibe – Auth 🔥</h2>
+
+<input id="email" placeholder="Email"><br><br>
+<input id="password" type="password" placeholder="Password"><br><br>
+
+<button id="registerBtn">Register</button>
+<button id="loginBtn">Login</button>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { 
+    getAuth, 
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword 
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDxdGrEG6LHcZogIV_RpkE_PKQfgjzDNG8",
+    authDomain: "scorpio-octavious-vibe.firebaseapp.com",
+    projectId: "scorpio-octavious-vibe",
+    storageBucket: "scorpio-octavious-vibe.firebasestorage.app",
+    messagingSenderId: "395329819255",
+    appId: "1:395329819255:web:69aa50a8adfe002a85ac72"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  document.getElementById("registerBtn").onclick = () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (!email || !password) {
+      alert("Enter email and password");
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => alert("✅ Account created successfully"))
+      .catch(err => alert("❌ " + err.code));
+  };
+
+  document.getElementById("loginBtn").onclick = () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (!email || !password) {
+      alert("Enter email and password");
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => alert("🔥 Login successful"))
+      .catch(err => alert("❌ " + err.code));
+  };
+</script>
+
+</body>
+</html>
