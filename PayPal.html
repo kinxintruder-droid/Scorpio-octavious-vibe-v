@@ -1,0 +1,29 @@
+<script>
+const MIN_AMOUNT = 50;
+
+paypal.Buttons({
+
+  createOrder: function(data, actions) {
+    const amt = Number(document.getElementById("amount").value);
+
+    if (!amt || amt < MIN_AMOUNT) {
+      alert("Minimum top-up is R" + MIN_AMOUNT);
+      return;
+    }
+
+    return actions.order.create({
+      purchase_units: [{
+        amount: { value: amt.toFixed(2) }
+      }]
+    });
+  },
+
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      const amt = document.getElementById("amount").value;
+      window.location.href = "success.html?amount=" + amt;
+    });
+  }
+
+}).render('#paypal-button-container');
+</script>
