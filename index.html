@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scorpio Octavious Vibe - Auth</title>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="./js/firebase-config.js"></script>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:linear-gradient(135deg,#000814,#001d3d);
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .card{
+      background:#0a0f1c;
+      padding:30px;
+      border-radius:12px;
+      width:300px;
+      box-shadow:0 0 20px rgba(0,140,255,0.4);
+      text-align:center;
+    }
+
+    input{
+      width:100%;
+      padding:10px;
+      margin:8px 0;
+      border:none;
+      border-radius:6px;
+      background:#1c2333;
+      color:white;
+    }
+
+    button{
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      border:none;
+      border-radius:6px;
+      background:#0077ff;
+      color:white;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#005edb;
+    }
+
+    .link{
+      margin-top:10px;
+      display:block;
+      color:#4da6ff;
+      cursor:pointer;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Scorpio Octavious Vibe 👑🔥</h2>
+
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Register</button>
+
+  <span class="link" onclick="resetPassword()">Forgot Password?</span>
+</div>
+
+<script>
+
+firebase.auth().onAuthStateChanged(user => {
+  if(user){
+    window.location.href = "dashboard.html";
+  }
+});
+
+function login(){
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  firebase.auth().signInWithEmailAndPassword(email,password)
+  .then(()=>{
+    window.location.href="dashboard.html";
+  })
+  .catch(error=>{
+    alert(error.message);
+  });
+}
+
+function register(){
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  firebase.auth().createUserWithEmailAndPassword(email,password)
+  .then(()=>{
+    alert("Account created successfully 🔥");
+    window.location.href="dashboard.html";
+  })
+  .catch(error=>{
+    alert(error.message);
+  });
+}
+
+function resetPassword(){
+  var email = document.getElementById("email").value;
+
+  if(!email){
+    alert("Enter your email first");
+    return;
+  }
+
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(()=>{
+    alert("Password reset email sent 📩");
+  })
+  .catch(error=>{
+    alert(error.message);
+  });
+}
+
+</script>
+
+</body>
+</html>
